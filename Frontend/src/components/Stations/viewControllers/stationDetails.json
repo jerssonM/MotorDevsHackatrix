@@ -1,0 +1,51 @@
+[
+    {
+        "idEstacion": 1,
+        "nombreEstacion": "Perdomo",
+        "rutas": [
+            {
+                "idRuta": 1,
+                "nombreRuta": "B12",
+                "cantidad": 153
+            },
+            {
+                "idRuta": 2,
+                "nombreRuta": "C30",
+                "cantidad": 47
+            },
+            {
+                "idRuta": 3,
+                "nombreRuta": "M47",
+                "cantidad": 14
+            },
+            {
+                "idRuta": 4,
+                "nombreRuta": "4",
+                "cantidad": 6
+            }
+        ],
+        "totalSolicitudes": 220
+    },
+    {
+        "idEstacion": 2,
+        "nombreEstacion": "Madelena",
+        "rutas": [
+            {
+                "idRuta": 1,
+                "nombreRuta": "B12",
+                "cantidad": 51
+            },
+            {
+                "idRuta": 2,
+                "nombreRuta": "M47",
+                "cantidad": 49
+            },
+            {
+                "idRuta": 3,
+                "nombreRuta": "4",
+                "cantidad": 12
+            }
+        ],
+        "totalSolicitudes": 112
+    }
+]
