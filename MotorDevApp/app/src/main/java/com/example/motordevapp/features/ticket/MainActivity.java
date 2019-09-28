@@ -1,8 +1,10 @@
-package com.example.motordevapp;
+package com.example.motordevapp.features.ticket;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.motordevapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
