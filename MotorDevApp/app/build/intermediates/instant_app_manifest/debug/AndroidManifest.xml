@@ -25,16 +25,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:testOnly="true"
+        android:theme="@style/infostyle.base.theme" >
         <activity android:name="com.example.motordevapp.features.login.LoginActivity" />
         <activity android:name="com.example.motordevapp.features.ticket.TicketActivity" >
+        </activity>
+        <activity android:name="com.example.motordevapp.notificacion.NotificacionActividad" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.motordevapp.notificacion.NotificacionActividad" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
