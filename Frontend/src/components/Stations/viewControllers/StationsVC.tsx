@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import StationsView from '../views/StationsView';
-import IStationDetail from '../../../models/station/entities/IStationDetail';
+import IStationDetail from '../../../models/IStationDetail';
 import stationDetailsJSON from '../viewControllers/stationDetails.json';
-import StationModel from '../../../models/station';
+import StationModel from '../../../models/StationModel';
 
 const stationModel = new StationModel();
 
