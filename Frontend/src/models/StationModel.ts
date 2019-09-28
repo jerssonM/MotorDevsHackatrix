@@ -1,16 +1,16 @@
-import firebase from 'firebase';
-import { Observer, Observable } from 'rxjs';
-import { Subscription } from '../utils/observerManager';
-import { firebaseCredentials } from '../constants/credentials';
+import firebase from "firebase";
+import { Observer, Observable } from "rxjs";
+import { Subscription } from "../utils/observerManager";
+import { firebaseCredentials } from "../constants/credentials";
 firebase.initializeApp(firebaseCredentials);
 const db = firebase.database();
 
 export default class StationModel {
     public GetStationDetails(): Subscription<any> {
         return Observable.create((observer: Observer<any>) => {
-            var database = db.ref('/');
+            var database = db.ref("/");
             database.on(
-                'value',
+                "value",
                 function(snapshot: any) {
                     let datosNodo = snapshot.val();
                     var estaciones = datosNodo.Estaciones; //db.ref("Estaciones");
@@ -37,36 +37,66 @@ export default class StationModel {
                         for (const idEstacion in origenes) {
                             if (idEstacion == estacion.IdEstacion) {
                                 usuariosEstacionOrigen = origenes[idEstacion];
-                                numSolicitudesEstacion =
-                                    origenes[idEstacion].length;
+                                if (!origenes[idEstacion].length) {
+                                    numSolicitudesEstacion = Object.values(
+                                        origenes[idEstacion]
+                                    ).length;
+                                } else {
+                                    numSolicitudesEstacion =
+                                        origenes[idEstacion].length;
+                                }
                                 estacionEncontradaEnOrigen = true;
                             }
                         }
                         if (!estacionEncontradaEnOrigen) {
                             continue;
                         }
-                        usuariosEstacionOrigen.forEach(
-                            (idUsuarioEstacionOrigen: any) => {
-                                for (const idEstacion in destinos) {
-                                    let usuarios = destinos[idEstacion];
-                                    if (
-                                        Object.values(usuarios).some(
-                                            (usuario: any) =>
-                                                usuario.idUsuario ==
-                                                idUsuarioEstacionOrigen.idUsuario
-                                        )
-                                    ) {
-                                        let conteo = destinosUsuarios[
-                                            idEstacion
-                                        ]
-                                            ? destinosUsuarios[idEstacion]
-                                            : 0;
-                                        destinosUsuarios[idEstacion] =
-                                            conteo + 1;
+                        if (usuariosEstacionOrigen.length)
+                            usuariosEstacionOrigen.forEach(
+                                (idUsuarioEstacionOrigen: any) => {
+                                    for (const idEstacion in destinos) {
+                                        let usuarios = destinos[idEstacion];
+                                        if (
+                                            Object.values(usuarios).some(
+                                                (usuario: any) =>
+                                                    usuario.idUsuario ==
+                                                    idUsuarioEstacionOrigen.idUsuario
+                                            )
+                                        ) {
+                                            let conteo = destinosUsuarios[
+                                                idEstacion
+                                            ]
+                                                ? destinosUsuarios[idEstacion]
+                                                : 0;
+                                            destinosUsuarios[idEstacion] =
+                                                conteo + 1;
+                                        }
                                     }
                                 }
-                            }
-                        );
+                            );
+                        else
+                            Object.values(usuariosEstacionOrigen).forEach(
+                                (idUsuarioEstacionOrigen: any) => {
+                                    for (const idEstacion in destinos) {
+                                        let usuarios = destinos[idEstacion];
+                                        if (
+                                            Object.values(usuarios).some(
+                                                (usuario: any) =>
+                                                    usuario.idUsuario ==
+                                                    idUsuarioEstacionOrigen
+                                            )
+                                        ) {
+                                            let conteo = destinosUsuarios[
+                                                idEstacion
+                                            ]
+                                                ? destinosUsuarios[idEstacion]
+                                                : 0;
+                                            destinosUsuarios[idEstacion] =
+                                                conteo + 1;
+                                        }
+                                    }
+                                }
+                            );
                         let destinosOrganizados = [];
                         let rutasOrganizadas: any = [];
                         for (const idEstacionDestino in destinosUsuarios) {
@@ -114,31 +144,30 @@ export default class StationModel {
                                             )
                                         );
                                     });
-                                    if (rutaRecomendada != undefined) {
-
-                                        rutasRecomendadas.forEach((ruta: any) => {
-                                            if (
+                                if (rutaRecomendada != undefined) {
+                                    rutasRecomendadas.forEach((ruta: any) => {
+                                        if (
+                                            ruta.nombreRuta ==
+                                            rutaRecomendada.idRuta
+                                        ) {
+                                            ruta.cantidad =
+                                                ruta.cantidad +
+                                                destino.numeroSolicitudes;
+                                        }
+                                    });
+                                    if (
+                                        !rutasRecomendadas.some(
+                                            (ruta: any) =>
                                                 ruta.nombreRuta ==
                                                 rutaRecomendada.idRuta
-                                            ) {
-                                                ruta.cantidad =
-                                                    ruta.cantidad +
-                                                    destino.numeroSolicitudes;
-                                            }
+                                        )
+                                    ) {
+                                        rutasRecomendadas.push({
+                                            nombreRuta: rutaRecomendada.idRuta,
+                                            cantidad: destino.numeroSolicitudes
                                         });
-                                        if (
-                                            !rutasRecomendadas.some(
-                                                (ruta: any) =>
-                                                ruta.nombreRuta ==
-                                            rutaRecomendada.idRuta
-                                            )
-                                ) {
-                                    rutasRecomendadas.push({
-                                        nombreRuta: rutaRecomendada.idRuta,
-                                        cantidad: destino.numeroSolicitudes
-                                    });
+                                    }
                                 }
-                            }
                             });
                         data.push({
                             idEstacion: estacion.IdEstacion,
@@ -151,7 +180,7 @@ export default class StationModel {
                     observer.next(data);
                 },
                 function(errorObject: any) {
-                    console.log('The read failed: ' + errorObject.code);
+                    console.log("The read failed: " + errorObject.code);
                 }
             );
         });

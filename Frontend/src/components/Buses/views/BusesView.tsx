@@ -37,7 +37,7 @@ const BusesView: React.FunctionComponent<BusesViewProps> = ({
                                 justify="space-between"
                                 spacing={2}
                             >
-                                <Grid item md={5}>
+                                <Grid item md={4}>
                                     <TextField
                                         fullWidth
                                         select
@@ -58,7 +58,7 @@ const BusesView: React.FunctionComponent<BusesViewProps> = ({
                                         )}
                                     </TextField>
                                 </Grid>
-                                <Grid item md={5}>
+                                <Grid item md={4}>
                                     <TextField
                                         fullWidth
                                         select
@@ -74,7 +74,7 @@ const BusesView: React.FunctionComponent<BusesViewProps> = ({
                                         ))}
                                     </TextField>
                                 </Grid>
-                                <Grid item md={2}>
+                                <Grid item md={4}>
                                     <Button
                                         disabled={
                                             !newBus.idRuta || !newBus.idBus

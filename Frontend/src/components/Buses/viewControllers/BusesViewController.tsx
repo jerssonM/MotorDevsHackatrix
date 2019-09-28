@@ -81,12 +81,12 @@ const BusesViewController: React.FunctionComponent = () => {
         routesModel.getRoutesBus(
             {
                 next: (routes: any[]) => {
-                    debugger
+                    debugger;
                     routes.forEach(route => {
                         origenModel.removeOrigen(
                             { next: e => console.log(e) },
                             route.idEstacion,
-                            "1"
+                            Math.round(Math.random() * 5).toString()
                         );
                     });
                 }
