@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "205248044187",
+    "firebase_url": "https://motordevs40.firebaseio.com",
+    "project_id": "motordevs40",
+    "storage_bucket": "motordevs40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205248044187:android:5efd4122b77c6a21e4fa3e",
+        "android_client_info": {
+          "package_name": "com.example.motordevapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205248044187-d9p2tue60qb1sn29laen4td778u5ldnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlLykYr3GHuDQr12bMv2V8RYiL4-uRj00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205248044187-d9p2tue60qb1sn29laen4td778u5ldnn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
