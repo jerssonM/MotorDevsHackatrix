@@ -13,7 +13,6 @@ export default class StationModel {
                 'value',
                 function(snapshot: any) {
                     let datosNodo = snapshot.val();
-                    debugger;
                     var estaciones = datosNodo.Estaciones; //db.ref("Estaciones");
                     var origenes = datosNodo.Origen; //db.ref("Origen");
                     var destinos = datosNodo.Destino; //db.ref("Destino");
@@ -28,7 +27,7 @@ export default class StationModel {
                     //});
 
                     for (let index = 0; index < estaciones.length; index++) {
-                        const estacion = datosNodo[index];
+                        const estacion = estaciones[index];
                         let idEstacionOrigen = estacion.IdEstacion;
                         let numSolicitudesEstacion = 0;
                         let destinosUsuarios: any = {};
@@ -51,7 +50,7 @@ export default class StationModel {
                                 for (const idEstacion in destinos) {
                                     let usuarios = destinos[idEstacion];
                                     if (
-                                        usuarios.some(
+                                        Object.values(usuarios).some(
                                             (usuario: any) =>
                                                 usuario.idUsuario ==
                                                 idUsuarioEstacionOrigen.idUsuario
@@ -115,28 +114,31 @@ export default class StationModel {
                                             )
                                         );
                                     });
-                                rutasRecomendadas.forEach((ruta: any) => {
-                                    if (
-                                        ruta.nombreRuta ==
-                                        rutaRecomendada.idRuta
-                                    ) {
-                                        ruta.cantidad =
-                                            ruta.cantidad +
-                                            destino.numeroSolicitudes;
-                                    }
-                                });
-                                if (
-                                    !rutasRecomendadas.some(
-                                        (ruta: any) =>
-                                            ruta.nombreRuta ==
+                                    if (rutaRecomendada != undefined) {
+
+                                        rutasRecomendadas.forEach((ruta: any) => {
+                                            if (
+                                                ruta.nombreRuta ==
+                                                rutaRecomendada.idRuta
+                                            ) {
+                                                ruta.cantidad =
+                                                    ruta.cantidad +
+                                                    destino.numeroSolicitudes;
+                                            }
+                                        });
+                                        if (
+                                            !rutasRecomendadas.some(
+                                                (ruta: any) =>
+                                                ruta.nombreRuta ==
                                             rutaRecomendada.idRuta
-                                    )
+                                            )
                                 ) {
                                     rutasRecomendadas.push({
                                         nombreRuta: rutaRecomendada.idRuta,
                                         cantidad: destino.numeroSolicitudes
                                     });
                                 }
+                            }
                             });
                         data.push({
                             idEstacion: estacion.IdEstacion,

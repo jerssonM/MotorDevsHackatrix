@@ -79,10 +79,10 @@ const App: FunctionComponent<{ classes: any }> = ({ classes }) => {
                 </Toolbar>
             </AppBar>
             <Grid className={classes.mainContainer} container spacing={4}>
-                <Grid item xs={6}>
+                <Grid item xs={5}>
                     <Stations />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={5}>
                     <Buses />
                 </Grid>
             </Grid>
