@@ -1,10 +1,8 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import Buses from "./components/Buses";
 
 const App: React.FC = () => {
-    return (
-        <div></div>
-    );
-}
+  return <Buses />;
+};
 
 export default App;

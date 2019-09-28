@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--region Temas defecto base infotrack-->
+    <style name="infostyle.base.theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <!--endregion-->
+
+    <style name="infostyle.componente.cardview" parent="android:Widget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="infostyle.componente.edittext.multilinea" parent="infostyle.base.theme">
+        <item name="android:focusable">true</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:gravity">top|left</item>
+        <item name="android:maxLength">200</item>
+        <item name="android:maxLines">5</item>
+        <item name="android:minLines">5</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:singleLine">false</item>
+    </style>
+
+    <style name="infostyle.layout.encabezadoframe" parent="infostyle.base.theme">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="infostyle.fuente.encabezadoFrame" parent="infostyle.base.theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom|right</item>
+        <item name="android:paddingRight">@dimen/dp_frame_encabezado_padding</item>
+        <item name="android:fontFamily">@string/fuente_regular</item>
+        <item name="android:textSize">@dimen/sp_fuente_encabezado4</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="infostyle.componente.underline" parent="infostyle.base.theme">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/dp_underline_view_height</item>
+    </style>
+
+    <style name="infostyle.spinner.large" parent="infostyle.base.theme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_spinner_altura_layout</item>
+        <item name="android:background">@drawable/combo_estilo_degrade</item>
+        <item name="android:layout_margin">@dimen/dp_spinner_margen</item>
+        <item name="android:paddingLeft">@dimen/dp_spinner_margen_izquierdo</item>
+        <item name="android:paddingRight">@dimen/dp_spinner_margen_derecho</item>
+        <item name="android:popupBackground">#DFFFFFFF</item>
+        <item name="android:height">@dimen/dp_spinner_altura</item>
+    </style>
+
+    <!--region Estilos fuentes-->
+    <style name="infostyle.fuente.encabezado1" parent="infostyle.base.theme">
+        <item name="android:fontFamily">@string/fuente_light</item>
+        <item name="android:textSize">@dimen/sp_fuente_encabezado1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="infostyle.fuente.encabezado2" parent="infostyle.base.theme">
+        <item name="android:fontFamily">@string/fuente_light</item>
+        <item name="android:textSize">@dimen/sp_fuente_encabezado2</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="infostyle.fuente.encabezado3" parent="infostyle.base.theme">
+        <item name="android:fontFamily">@string/fuente_regular</item>
+        <item name="android:textSize">@dimen/sp_fuente_encabezado3</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="infostyle.fuente.encabezado4" parent="infostyle.base.theme">
+        <item name="android:fontFamily">@string/fuente_regular</item>
+        <item name="android:textSize">@dimen/sp_fuente_encabezado4</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="infostyle.fuente.encabezado5" parent="infostyle.base.theme">
+        <item name="android:fontFamily">@string/fuente_regular</item>
+        <item name="android:textSize">@dimen/sp_fuente_encabezado5</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="infostyle.fuente.titulo" parent="infostyle.base.theme">
+        <item name="android:fontFamily">@string/fuente_medium</item>
+        <item name="android:textSize">@dimen/sp_fuente_titulo</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="infostyle.fuente.subtitulo" parent="infostyle.base.theme">
+        <item name="android:fontFamily">@string/fuente_regular</item>
+        <item name="android:textSize">@dimen/sp_fuente_subtitulo</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="infostyle.fuente.contenido.primario" parent="infostyle.base.theme">
+        <item name="android:fontFamily">@string/fuente_regular</item>
+        <item name="android:textSize">@dimen/sp_fuente_contenido</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="infostyle.fuente.contenido.secundario" parent="infostyle.base.theme">
+        <item name="android:fontFamily">@string/fuente_medium</item>
+        <item name="android:textSize">@dimen/sp_fuente_contenido</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="infostyle.fuente.pie.foto" parent="infostyle.base.theme">
+        <item name="android:fontFamily">@string/fuente_regular</item>
+        <item name="android:textSize">@dimen/sp_fuente_pie_foto</item>
+        <item name="android:textColor">@color/iron</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="infostyle.fuente.boton" parent="Base.Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:fontFamily">@string/fuente_medium</item>
+        <item name="android:textSize">@dimen/sp_fuente_boton</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--endregion-->
+</resources>
