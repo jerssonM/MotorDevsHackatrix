@@ -45,10 +45,10 @@ build/Release
 
 # Dependency directories
 node_modules/
+Frontend/node_modules
 
-FunctionsFirebase/functions/node_modules
 
-# Optional npm cache directory
+# Optional npm cache directorsy
 .npm
 
 # Optional eslint cache
