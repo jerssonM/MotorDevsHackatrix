@@ -44,9 +44,9 @@
 28        <activity android:name="com.example.motordevapp.features.login.LoginActivity" />
 28-->D:\AndroidProjects\Bela\AppMotorDev\MotorDevApp\app\src\main\AndroidManifest.xml:15:9-75
 28-->D:\AndroidProjects\Bela\AppMotorDev\MotorDevApp\app\src\main\AndroidManifest.xml:15:19-63
-29        <activity android:name="com.example.motordevapp.MainActivity" >
+29        <activity android:name="com.example.motordevapp.features.ticket.TicketActivity" >
 29-->D:\AndroidProjects\Bela\AppMotorDev\MotorDevApp\app\src\main\AndroidManifest.xml:16:9-22:20
-29-->D:\AndroidProjects\Bela\AppMotorDev\MotorDevApp\app\src\main\AndroidManifest.xml:16:19-47
+29-->D:\AndroidProjects\Bela\AppMotorDev\MotorDevApp\app\src\main\AndroidManifest.xml:16:19-65
 30            <intent-filter>
 30-->D:\AndroidProjects\Bela\AppMotorDev\MotorDevApp\app\src\main\AndroidManifest.xml:17:13-21:29
 31                <action android:name="android.intent.action.MAIN" />

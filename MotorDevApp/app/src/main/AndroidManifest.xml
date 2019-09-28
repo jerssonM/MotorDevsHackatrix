@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".features.login.LoginActivity"></activity>
-        <activity android:name=".features.ticket.MainActivity">
+        <activity android:name=".features.ticket.TicketActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

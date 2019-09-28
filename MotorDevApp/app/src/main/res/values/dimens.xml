@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--region Tamaño Fuentes-->
+    <dimen name="sp_fuente_encabezado1">96sp</dimen>
+    <dimen name="sp_fuente_encabezado2">60sp</dimen>
+    <dimen name="sp_fuente_encabezado3">48sp</dimen>
+    <dimen name="sp_fuente_encabezado4">34sp</dimen>
+    <dimen name="sp_fuente_encabezado5">24sp</dimen>
+    <dimen name="sp_fuente_titulo">20sp</dimen>
+    <dimen name="sp_fuente_subtitulo">16sp</dimen>
+    <dimen name="sp_fuente_contenido">14sp</dimen>
+    <dimen name="sp_fuente_pie_foto">12sp</dimen>
+    <dimen name="sp_fuente_boton">14sp</dimen>
+    <!--endregion-->
+
+    <!--region Tamaños Card-->
+    <dimen name="dp_card_esquinas">4dp</dimen>
+    <dimen name="dp_card_elevacion">1dp</dimen>
+    <dimen name="dp_card_contentido_padding">10dp</dimen>
+    <!--endregion-->
+
+    <dimen name="dp_frame_encabezado_padding">10dp</dimen>
+    <dimen name="dp_underline_view_height">1dp</dimen>
+
+    <dimen name="dp_spinner_altura_layout">35dp</dimen>
+    <dimen name="dp_spinner_margen">5dp</dimen>
+    <dimen name="dp_spinner_margen_izquierdo">8dp</dimen>
+    <dimen name="dp_spinner_margen_derecho">20dp</dimen>
+    <dimen name="dp_spinner_altura">20dp</dimen>
+</resources>
