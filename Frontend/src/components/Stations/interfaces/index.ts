@@ -1,4 +1,4 @@
-import IStationDetail from '../../../models/stations/entities/IStationDetail';
+import IStationDetail from '../../../models/IStationDetail';
 
 export default interface IStationsViewProps {
     classes: any;

@@ -12,7 +12,7 @@ import {
 import PersonIcon from '@material-ui/icons/Person';
 import IStationsViewProps from '../interfaces';
 import styles from './styles';
-import IRouteDetail from '../../../models/station/entities/IRouteDetail';
+import IRouteDetail from '../../../models/IRouteDetail';
 
 const StationsView: FunctionComponent<IStationsViewProps> = ({
     classes,

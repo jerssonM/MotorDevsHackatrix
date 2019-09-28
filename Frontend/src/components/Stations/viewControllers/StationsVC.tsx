@@ -1,22 +1,21 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import StationsView from '../views/StationsView';
 import IStationDetail from '../../../models/IStationDetail';
-import stationDetailsJSON from '../viewControllers/stationDetails.json';
 import StationModel from '../../../models/StationModel';
 
 const stationModel = new StationModel();
 
 const StationsVC: FunctionComponent = () => {
-    const [stationDetails, setStationsDetails] = useState<IStationDetail[]>(
-        stationDetailsJSON
-    );
+    const [stationDetails, setStationsDetails] = useState<IStationDetail[]>([]);
 
     useEffect(() => {
         loadStationDetails();
     }, []);
 
-    const loadStationDetails = async () => {
-        setStationsDetails(await stationModel.GetStationDetails());
+    const loadStationDetails = () => {
+        stationModel
+            .GetStationDetails()
+            .subscribe({ next: data => setStationsDetails(data) });
     };
 
     return <StationsView stationDetails={stationDetails} />;
