@@ -33,6 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.motordevapp.notificacion.NotificacionActividad" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
