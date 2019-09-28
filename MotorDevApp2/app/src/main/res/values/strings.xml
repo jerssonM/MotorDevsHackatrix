@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MotorDevApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="estaci_n_de_origen">Estación de origen</string>
+    <string name="estacion_destino">Estación Destino</string>
+    <string name="nombre_activity_main">Planifica tu viaje</string>
+</resources>
